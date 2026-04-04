@@ -3,7 +3,8 @@ import highway_env
 import numpy as np
 import torch
 import random
-
+import os
+from network import DQNAgent
 
 # Set the seed and create the environment
 np.random.seed(0)
@@ -17,8 +18,8 @@ env = gymnasium.make(env_name,
                      render_mode='human')
 
 # Initialize your model and load parameters
-agent = None
-raise NotImplementedError
+agent = DQNAgent(state_dim=25, action_dim=5)
+agent.load(os.path.join(os.path.dirname(__file__), "results", "run_20260329_123734", "dqn_model.pth"))
 
 # Evaluation loop
 state, _ = env.reset()
@@ -32,10 +33,8 @@ episode_return = 0
 while episode <= 10:
     episode_steps += 1
     # Select the action to be performed by the agent
-    action = None
-    raise NotImplementedError
+    action = agent.select_action(state, evaluate=True)
 
-    # Hint: take a look at the docs to see the difference between 'done' and 'truncated'
     state, reward, done, truncated, _ = env.step(action)
     state = state.reshape(-1)
     env.render()
@@ -52,3 +51,4 @@ while episode <= 10:
         episode_return = 0
 
 env.close()
+

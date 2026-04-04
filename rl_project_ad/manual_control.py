@@ -1,6 +1,7 @@
 import gymnasium
 import highway_env
-
+import json
+import os
 
 # Remember to save what you will need for the plots
 
@@ -15,6 +16,9 @@ done, truncated = False, False
 episode = 1
 episode_steps = 0
 episode_return = 0
+episode_returns = []
+episode_lengths = []
+episode_crashes = []
 
 while episode <= 10:
     episode_steps += 1
@@ -28,9 +32,26 @@ while episode <= 10:
     if done or truncated:
         print(f"Episode Num: {episode} Episode T: {episode_steps} Return: {episode_return:.3f}, Crash: {done}")
 
+        # --- RACCOLTA METRICHE ---
+        episode_returns.append(episode_return)
+        episode_lengths.append(episode_steps)
+        episode_crashes.append(done)  # done = True se si è schiantato, altrimenti False
+
         env.reset()
         episode += 1
         episode_steps = 0
         episode_return = 0
 
 env.close()
+
+model_name = "manual"  
+metrics = {
+    "returns": episode_returns,
+    "lengths": episode_lengths,
+    "crashes": [int(c) for c in episode_crashes] 
+}
+os.makedirs("plot_data", exist_ok=True)
+file_path = f"plot_data/{model_name}_metrics.json"
+with open(file_path, "w") as f:
+    json.dump(metrics, f)
+print(f"Metriche salvate con successo in {file_path}!")
