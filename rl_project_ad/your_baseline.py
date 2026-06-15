@@ -2,7 +2,9 @@ import gymnasium
 import highway_env
 import numpy as np
 import random
+import json
 
+# standard baseline policy, not used in the results
 def baseline_policy(state_matrix):
 
     action = 3 #if no other event occur, accelerate
