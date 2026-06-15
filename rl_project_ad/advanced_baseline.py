@@ -68,7 +68,7 @@ while episode <= 10:
     episode_steps += 1
     print(state)
     action = advanced_baseline_policy(state)
-    if action in [0, 2]:  # 0: Sinistra, 2: Destra
+    if action in [0, 2]: 
         lane_changes += 1
     state, reward, done, truncated, info = env.step(action)
     episode_velocities.append(info["speed"])
@@ -85,7 +85,7 @@ while episode <= 10:
 
         episode_returns.append(episode_return)
         episode_lengths.append(episode_steps)
-        episode_crashes.append(done)  # done = True se si è schiantato, altrimenti False
+        episode_crashes.append(done) 
         episode_lane_changes.append(lane_changes)
         episode_avg_velocities.append(np.mean(episode_velocities))
         episode_steps = 0

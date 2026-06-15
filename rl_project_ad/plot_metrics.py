@@ -24,10 +24,10 @@ groups = {
         "Manual Human": os.path.join(plot_data_dir, "manual_metrics.json"),
         "Base DQN": os.path.join(plot_data_dir, "base_dqn_metrics.json"),
         "Advanced Baseline": os.path.join(plot_data_dir, "advanced_baseline_metrics.json"),
-        "P4: DDQN (12k)": os.path.join(plot_data_dir, "phase4_double_dqn_metrics.json"),
-        "P4: DDQN (3 Lanes)": os.path.join(plot_data_dir, "phase4_double_dqn_3lanes_metrics.json"),
-        "P4: DDQN (Balanced)": os.path.join(plot_data_dir, "phase4_double_dqn_overtake_balanced_metrics.json"),
-        "P4: DDQN (Tuned)": os.path.join(plot_data_dir, "phase4_double_dqn_overtake_courageous_metrics.json")
+        "P4.1: DDQN (4 Lanes)": os.path.join(plot_data_dir, "phase4_double_dqn_metrics.json"),
+        "P4.2: DDQN (3 Lanes)": os.path.join(plot_data_dir, "phase4_double_dqn_3lanes_metrics.json"),
+        "P4.3: DDQN (Balanced)": os.path.join(plot_data_dir, "phase4_double_dqn_overtake_balanced_metrics.json"),
+        "P4.4: DDQN (Tuned)": os.path.join(plot_data_dir, "phase4_double_dqn_overtake_courageous_metrics.json")
     }
 }
 

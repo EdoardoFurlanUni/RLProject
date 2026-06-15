@@ -8,12 +8,12 @@ import json
 import argparse
 from network_bonus import DQNAgent
 
-# Set the seed and create the environment
 np.random.seed(0)
 random.seed(0)
 torch.manual_seed(0)
 
 def main():
+    #parser arguments to allow for easier settings modifications
     parser = argparse.ArgumentParser(description="Evaluate a trained DQN agent on HighwayEnv")
     parser.add_argument("--model_dir", type=str, required=True, help="Directory name under results containing dqn_model.pth")
     parser.add_argument("--model_name", type=str, required=True, help="Model name prefix for saving metrics (e.g., base_dqn, double_dqn)")
@@ -72,7 +72,7 @@ def main():
         episode_steps += 1
         # Select the action to be performed by the agent
         action = agent.select_action(state, evaluate=True)
-        if action in [0, 2]:  # 0: Sinistra, 2: Destra
+        if action in [0, 2]:
             lane_changes += 1
         state, reward, done, truncated, info = env.step(action)
         episode_velocities.append(info["speed"])
@@ -84,10 +84,10 @@ def main():
 
         if done or truncated:
             print(f"Episode Num: {episode} Episode T: {episode_steps} Return: {episode_return:.3f}, Crash: {done}")
-            # --- RACCOLTA METRICHE ---
+            # --- METRICS ---
             episode_returns.append(episode_return)
             episode_lengths.append(episode_steps)
-            episode_crashes.append(done)  # done = True se si è schiantato, altrimenti False
+            episode_crashes.append(done) 
             episode_lane_changes.append(lane_changes)
             episode_avg_velocities.append(np.mean(episode_velocities))
             
@@ -113,7 +113,7 @@ def main():
     file_path = os.path.join(plot_data_dir, f"{args.model_name}_metrics.json")
     with open(file_path, "w") as f:
         json.dump(metrics, f)
-    print(f"Metriche salvate con successo in {file_path}!")
+    print(f"Metrics saved in {file_path}!")
 
 if __name__ == "__main__":
     main()

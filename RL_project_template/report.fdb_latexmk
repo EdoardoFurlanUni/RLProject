@@ -1,15 +1,18 @@
 # Fdb version 4
-["bibtex report"] 1781447702.42194 "report.aux" "report.bbl" "report" 1781448642.34929 0
+["bibtex report"] 1781559488.30242 "report.aux" "report.bbl" "report" 1781560208.8464 0
   "./icml2021.bst" 1768981260 27147 754d35bad1e0551f1b55824eb3875247 ""
   "./report.bib" 1781363600.07218 1635 eea26d834aef346b50cf82bfe7e4ee6d ""
-  "report.aux" 1781448642.04606 1067 bb9d9ccc18c15d7cce06faa69a65f537 "pdflatex"
+  "report.aux" 1781560208.58865 1492 f304968a1ff55c407c9c9325018b46a7 "pdflatex"
   (generated)
   "report.bbl"
   "report.blg"
   (rewritten before read)
-["pdflatex"] 1781448641.33274 "report.tex" "report.pdf" "report" 1781448642.34943 0
-  "../rl_project_ad/plot_data/comparison_returns.pdf" 1781383115.02665 18553 5f9c1c336c54fd51d09a26b083a03f05 ""
-  "../rl_project_ad/plot_data/comparison_velocities.pdf" 1781383115.66534 19032 5521acb49046ee1821929cedab9aa54f ""
+["pdflatex"] 1781560207.88732 "/Users/Edoardo/Desktop/EDOARDO/UNI/MAGISTRALE/SECONDO_ANNO/REINFORCEMENT/RLProject/RL_project_template/report.tex" "report.pdf" "report" 1781560208.84652 0
+  "../rl_project_ad/plot_data/comparison_returns_p13.pdf" 1781560193.23476 26240 7ce784be56bbeaa219a7eb9909c097ec ""
+  "../rl_project_ad/plot_data/comparison_returns_p4.pdf" 1781560193.84376 23060 51d804ccfd4ebfb825b573809e9f6cc6 ""
+  "../rl_project_ad/plot_data/comparison_velocities_p13.pdf" 1781560193.72126 25575 9c1a53f2e8cc21051d598248328caae7 ""
+  "../rl_project_ad/plot_data/comparison_velocities_p4.pdf" 1781560194.30249 22938 44feee47a32642daf80720d0de638da3 ""
+  "/Users/Edoardo/Desktop/EDOARDO/UNI/MAGISTRALE/SECONDO_ANNO/REINFORCEMENT/RLProject/RL_project_template/report.tex" 1781560207.52038 23555 36460eb158fd313c372b224cc3c996cc ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1136768653 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -43,6 +46,7 @@
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmti9.tfm" 1136768653 1476 cccc6cc4935c18ec3d5623b77ecb8b74 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1248133631 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb" 1248133631 37912 77d683123f92148345f3fc36a38d9ab1 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1248133631 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1248133631 36281 c355509802a035cadc5f15869451dcee ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
@@ -144,10 +148,10 @@
   "algorithmic.sty" 1768981260 7414 ce084815cf0aab483787dbc4bf2ace9c ""
   "fancyhdr.sty" 1768981260 20521 e5d13d98d57bd53d4fed3aa61bd29c86 ""
   "icml2021.sty" 1768981260 27174 ab30649a6169102389fe194b6304d846 ""
-  "report.aux" 1781448642.04606 1067 bb9d9ccc18c15d7cce06faa69a65f537 "pdflatex"
-  "report.bbl" 1781447702.70114 1173 79a42cc9edd5f8b34703b1ef3b01e7e0 "bibtex report"
-  "report.out" 1781448641.78932 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "report.tex" 1781448631.24453 18582 eb43a0a8d9d83c487d913ed9c5ab13a6 ""
+  "report.aux" 1781560208.58865 1492 f304968a1ff55c407c9c9325018b46a7 "pdflatex"
+  "report.bbl" 1781559488.42636 1167 7cf3464049edd9d7e9364b5b5c078c12 "bibtex report"
+  "report.out" 1781560208.301 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "report.tex" 1781560207.52038 23555 36460eb158fd313c372b224cc3c996cc ""
   (generated)
   "report.aux"
   "report.log"

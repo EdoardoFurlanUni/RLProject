@@ -22,38 +22,6 @@ class Network(nn.Module):
     def forward(self, x):
         return self.net(x)
 
-class DuelingNetwork(nn.Module):
-    """
-    Dueling Q-Network architecture separating state-value V(s) and advantage functions A(s, a).
-    """
-    def __init__(self, state_dim, action_dim):
-        super().__init__()
-        # Shared feature representation
-        self.feature_network = nn.Sequential(
-            nn.Linear(state_dim, 128),
-            nn.ReLU(),
-        )
-        # Value stream V(s)
-        self.value_stream = nn.Sequential(
-            nn.Linear(128, 64),
-            nn.ReLU(),
-            nn.Linear(64, 1)
-        )
-        # Advantage stream A(s, a)
-        self.advantage_stream = nn.Sequential(
-            nn.Linear(128, 64),
-            nn.ReLU(),
-            nn.Linear(64, action_dim)
-        )
-
-    def forward(self, x):
-        features = self.feature_network(x)
-        values = self.value_stream(features)
-        advantages = self.advantage_stream(features)
-        # Combine V(s) and A(s, a) with mean subtraction for identifiability
-        q_values = values + (advantages - advantages.mean(dim=-1, keepdim=True))
-        return q_values
-
 class ReplayBuffer:
     """
     Implementation of a Replay Buffer via a double-ended queue.
@@ -80,7 +48,7 @@ class ReplayBuffer:
 
 class DQNAgent:
     """
-    Implementation for DQN Agent supporting Vanilla, Double, and Dueling extensions.
+    Implementation for DQN Agent supporting Vanilla and Double extensions.
     """
     def __init__(
         self,
@@ -118,13 +86,9 @@ class DQNAgent:
         else:
             self.device = torch.device("cpu")
 
-        # Network selection based on dueling flag
-        if dueling:
-            self.network = DuelingNetwork(state_dim, action_dim).to(self.device)
-            self.target_network = DuelingNetwork(state_dim, action_dim).to(self.device)
-        else:
-            self.network = Network(state_dim, action_dim).to(self.device)
-            self.target_network = Network(state_dim, action_dim).to(self.device)
+
+        self.network = Network(state_dim, action_dim).to(self.device)
+        self.target_network = Network(state_dim, action_dim).to(self.device)
             
         self.target_network.load_state_dict(self.network.state_dict())
         self.target_network.eval()

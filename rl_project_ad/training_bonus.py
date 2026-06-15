@@ -17,6 +17,7 @@ torch.manual_seed(0)
 torch.set_num_threads(1)
 
 def main():
+    #parser arguments to allow for easier training modifications
     parser = argparse.ArgumentParser(description="Train a DQN agent with extensions and shaped reward")
     parser.add_argument("--model_dir", type=str, required=True, help="Directory name under results to save models")
     parser.add_argument("--double_dqn", action="store_true", help="Enable Double DQN training")

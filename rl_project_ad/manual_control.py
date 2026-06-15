@@ -43,10 +43,10 @@ while episode <= 10:
     if done or truncated:
         print(f"Episode Num: {episode} Episode T: {episode_steps} Return: {episode_return:.3f}, Crash: {done}")
 
-        # --- RACCOLTA METRICHE ---
+        # --- METRICS ---
         episode_returns.append(episode_return)
         episode_lengths.append(episode_steps)
-        episode_crashes.append(done)  # done = True se si è schiantato, altrimenti False
+        episode_crashes.append(done)
         episode_lane_changes.append(lane_changes)
         episode_avg_velocities.append(np.mean(episode_velocities))
         state, _ = env.reset()
@@ -71,4 +71,4 @@ os.makedirs("plot_data", exist_ok=True)
 file_path = f"plot_data/{model_name}_metrics.json"
 with open(file_path, "w") as f:
     json.dump(metrics, f)
-print(f"Metriche salvate con successo in {file_path}!")
+print(f"Metrics saved in {file_path}!")

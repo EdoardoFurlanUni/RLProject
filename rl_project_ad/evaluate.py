@@ -17,7 +17,7 @@ env = gymnasium.make(env_name,
                      config={'action': {'type': 'DiscreteMetaAction'}, "lanes_count": 3, "ego_spacing": 1.5},
                      render_mode='human')
 
-# Initialize your model and load parameters
+# Initialize model and load parameters
 agent = DQNAgent(state_dim=25, action_dim=5)
 agent.load(os.path.join(os.path.dirname(__file__), "results", "run_20260329_123734", "dqn_model.pth"))
 
